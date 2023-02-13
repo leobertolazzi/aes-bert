@@ -1,4 +1,4 @@
-# AES with BERT and BERT based models embeddings
+# AES with BERT based models
 
 This repository contain part of the material used for the exam of the course "Machine Learning for NLP I" (M.Sc. Cognitive Science, UniTn/CIMeC).
 
