@@ -35,11 +35,19 @@ The chosen evaluation metric is Quadratic weighted Kappa (QWK).
 QWK is a measure of interrater agreement between two raters that provide discrete numeric ratings. Potential values range from -1, representing complete disagreement, to 1, representing complete agreement. A kappa value of 0 is expected if all agreement is due to chance.
 
 ## Results
-The best performing model is RoBERTa (0.7289 after 5-fold cross-validation), which achieved a maximum agreement above human level (0.7636 vs. 0.7537). BERT and DistilBERT achieved almost identical level of agreement (0.7139 and 0.7153 after 5-fold cross-validation). Instead, the DistilRoBERTa from Sentence-Transformers obtained the lowest agreement overall (0.6837). 
 
-RoBERTa obtained a better result than the other models probably because of its training: in fact, while maintaining the same size of the original BERT model, it is trained using 10x training data.
+| Approach | meanQWK | maxQWK | minQWK |
+|----------|---------|--------|--------|
+| BERT | 0.7203 | 0.7388 | 0.6979 |
+| DistilBERT | 0.7091 | 0.7185 | 0.6990 |
+| RoBERTa | 0.7288 | 0.7562 | 0.7068 |
+| sentBERT | 0.6825 | 0.6930 | 0.6689 |
+| Human | 0.7537 | 0.7537 | 0.7537 |
+| SOTA | 0.7910 | 0.7910 | 0.7910 |
 
-The original BERT and DistilBERT performed almost identical. In the original [paper](https://arxiv.org/abs/1910.01108) the authors claim that DistilBERT retain 97% of the performance of BERT while having half the number of parameters. The results are in line with these claim, even if AES is not a task used in standard benchmarks.
+The best performing model is RoBERTa (0.7288 after 5-fold cross-validation), which achieved a max agreement almost identical to human level (0.7562 vs. 0.7537). The second best model is BERT (0.7203) and the third one is DistilBERT (0.7091). The DistilRoBERTa from Sentence-Transformers obtained the lowest agreement overall (0.6825). 
+
+RoBERTa obtained better results than the other models probably because of its training: in fact, while maintaining the same size of the original BERT model, it is trained using 10x training data.
 
 The results obtained by DistilRoBERTa show that the training approach used for models in the Sentence-Transformers library might not be beneficial for tasks like AES, while it was for standard Semantic Text Similarity tasks.
 
