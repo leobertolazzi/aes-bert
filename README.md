@@ -38,16 +38,17 @@ QWK is a measure of interrater agreement between two raters that provide discret
 
 | Approach | meanQWK | maxQWK | minQWK |
 |----------|---------|--------|--------|
-| BERT | 0.7203 | 0.7388 | 0.6979 |
-| DistilBERT | 0.7091 | 0.7185 | 0.6990 |
-| RoBERTa | 0.7288 | 0.7562 | 0.7068 |
-| sentBERT | 0.6825 | 0.6930 | 0.6689 |
+| BERT | 0.7396 | 0.7494 | 0.7342 |
+| DistilBERT | 0.7334 | 0.7503 | 0.7170 |
+| RoBERTa | 0.7531 | **0.7684** | 0.7365 |
+| sentBERT | 0.7227 | 0.7302 | 0.7127 |
 | Human | 0.7537 | 0.7537 | 0.7537 |
-| SOTA | 0.7910 | 0.7910 | 0.7910 |
 
-The best performing model is RoBERTa (0.7288 after 5-fold cross-validation), which achieved a max agreement almost identical to human level (0.7562 vs. 0.7537). The second best model is BERT (0.7203) and the third one is DistilBERT (0.7091). The DistilRoBERTa from Sentence-Transformers obtained the lowest agreement overall (0.6825). 
+The best performing model is RoBERTa (0.7531 after 5-fold cross-validation), which also achieved a max agreement higher than humans (0.7684 vs. 0.7537). The second best model is BERT (0.7396) and the third one is DistilBERT (0.7334). The DistilRoBERTa from Sentence-Transformers obtained the lowest agreement overall (0.7227). 
 
 RoBERTa obtained better results than the other models probably because of its training: in fact, while maintaining the same size of the original BERT model, it is trained using 10x training data.
+
+The original BERT and DistilBERT performed almost identical. In the original [paper](https://arxiv.org/abs/1910.01108) the authors claim that DistilBERT retain 97% of the performance of BERT while having half the number of parameters. The results are in line with these claim, even if AES is not a task used in standard benchmarks.
 
 The results obtained by DistilRoBERTa show that the training approach used for models in the Sentence-Transformers library might not be beneficial for tasks like AES, while it was for standard Semantic Text Similarity tasks.
 
