@@ -1,7 +1,5 @@
 # AES with BERT based models
 
-This repository contain part of the material used for the exam of the course "Machine Learning for NLP I" (M.Sc. Cognitive Science, UniTn/CIMeC).
-
 Automated Essay Scoring (AES) is the task of scoring written text employing automated computational methods. The first attempts in developing AES systems trace back to more than 50 years ago and the fact that almost all linguistic dimensions (semantics, grammar, style, persuasiveness, etc.) play a role in this task makes it very interesting. 
 
 SOTA approaches on AES are all supervised and the task can be framed in three different ways: regression, classification, or ranking. The possible algorithms ranges from linear and logistic regression to deep neural networks.
